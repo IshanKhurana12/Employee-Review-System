@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/css/signup">
+<h1>Review Update</h1>
+
+
+
+<h4>Employee List</h4>
+<form action="/permission/<%= id %>" method="POST">
+
+    <h3>List of employes you want to asssign</h3>
+    <label for="users">Select to give permission</label>
+<select name="users" id="users">
+    <option value="">N/a</option>
+    <% for(users of users){ %>
+       
+    <option  value="<%= users._id %>"><%- users.name  -%></option>
+   
+   
+    <% } %>
+    
+  </select>
+
+
+
+  <button type="submit">Give permission</button>
+</form>
+
+
+
+
+
+
+<form action="/review/updatenow/<%= id %>" method="POST">
+  <textarea name="content" cols="30" rows="10" placeholder="update Content..." required></textarea>
+  <button type="submit">Update</button>
+</form>

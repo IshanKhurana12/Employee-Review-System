@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/feedback.css">
+<br>
+<br>
+
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Review for</th>
+            <th>content</th>
+            <th>permission</th>
+            <th>update/add employee for participation</th>
+            <th>Delete Review</th>
+          
+            
+         
+           
+        </tr>
+    </thead>
+    <tbody>
+        <% for(user of users){ %>
+        <tr>
+            <td><%- user.reviewfor -%></td>
+            <td><%- user.content -%></td>
+            <td><%- user.permission -%></td>
+            <td><a href="/review/update/<%= user._id %>">update content</a></td>
+            <td><a href="/review/delete/<%= user._id %>">Delete</a></td>
+
+        </tr>
+
+
+        
+      
+        <% } %>
+     
+        <!-- and so on... -->
+    </tbody>
+</table>
+
+

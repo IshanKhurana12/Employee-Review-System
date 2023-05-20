@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/css/feedback.css">
+<br>
+<br>
+<small>if you are an admin then only you can make changes other wise you can only view</small>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Update Status</th>
+            <th>Admin</th>
+            <th>Remove user</th>
+            <th>view performance </th>
+            <th>create Performance Review</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(user of users){ %>
+        <tr>
+            <td><%- user.name -%></td>
+            <td><%- user.email -%></td>
+            <td><a href="/updateform/<%= user._id %>">update admin status</a></td>
+            <td><%- user.admin -%></td>
+           <td> <a href="/delete/<%= user._id %>">Remove</a></td>
+          <td><a href="/review">view</a></td>
+          <td><a href="/review/create/<%= user._id %>">Create New</a></td>
+        </tr>
+        
+      
+        <% } %>
+        <!-- and so on... -->
+    </tbody>
+</table>
